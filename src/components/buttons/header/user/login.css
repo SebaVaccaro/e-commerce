@@ -1,0 +1,20 @@
+.login-button{
+    background-color: #ffffff;
+    border: none;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 80px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.login-img{
+    width: 20%;
+    margin-right: 6px;
+}
+.login-button:hover{
+    cursor: pointer;
+    font-size: 22px;
+}
