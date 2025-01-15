@@ -1,0 +1,36 @@
+.sidebar-off{
+    display: none;
+}
+.sidebar-on{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.sidebar-body{
+    width: 40%;
+    height: 100%;
+    background-color: #ffffff;
+    border-right: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.sidebar-no-body{
+    cursor: pointer;
+    width: 60%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+}
+.arrow-left-img{
+    width: 100px;
+}
+.sidebar-no-body:hover .arrow-left-img{
+    width: 110px;
+}

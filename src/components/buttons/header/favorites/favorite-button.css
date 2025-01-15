@@ -1,0 +1,18 @@
+.favorite-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 60px;
+    background-color: #323d70;
+    color: #ffffff;
+    border: 0;
+    border-radius: 30px;
+}
+.favorite-icon{
+    width: 25px;
+    height: 25px;
+}
+.favorite-button:hover{
+    background-color: #222a4d;
+}

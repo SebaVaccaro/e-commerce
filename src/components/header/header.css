@@ -3,10 +3,11 @@
     align-items: center;
     justify-content: space-around;
     width: 100vw;
-    height: 120px;
-    background-color: #ffffff;
-    font-size: 28px;
-    font-weight: bold;
+    height: 100px;
+    background-color: #323d70;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
 }
 .name-header{
     cursor: pointer;

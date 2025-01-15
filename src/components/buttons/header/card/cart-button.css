@@ -1,0 +1,31 @@
+.cart-button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+}
+.cart-icon{
+    width: 35px;
+    height: 35px;
+}
+.cart-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 8%;
+    top: 0;
+    background-color: #6776bb;
+    border-radius: 10px;
+}
+
+.cart-button:hover{
+    background-color: #222a4d;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 30px;
+}
