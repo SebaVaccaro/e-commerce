@@ -1,0 +1,42 @@
+.categoria-item {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.categoria-item-button {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #323d70;
+    height: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.categoria-item-moor {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #323d70;
+    width: 10%; 
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+
+.categoria-item-button:hover,
+.categoria-item-button:hover + .categoria-item-moor {
+    background-color: #222a4d;
+}
+.categoria-item-moor:hover {
+    color: #1d1d1b;
+    background-color: #323d70;
+}
