@@ -2,12 +2,12 @@ import { useState } from "react"
 import { Menu } from "../../components/buttons/btnMenu/Menu"
 import "./sidebar.css"
 import { SidebarContiner } from "../../containers/sidebar/SidebarContainer"
-interface sidebar{
-    changeState: ()=>void
-}
-export const Sidebar:React.FC<sidebar> = () =>{
+
+type changeStateType = () => void
+
+export const Sidebar = () =>{
     const [state, setState] = useState<boolean>(false)
-    const changeState = ()=> setState(!state)
+    const changeState: changeStateType = ()=> setState(!state)
     return(
         <div className="sidebar">
             <div 

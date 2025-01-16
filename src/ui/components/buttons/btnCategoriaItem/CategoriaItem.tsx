@@ -4,30 +4,30 @@ import "./categoria-item.css"
 export const CategoriaItem = ({ data }: { data: menuData }) => {
     const [state, setState] = useState<boolean>(false)
     return (
-        <div className="categoria-item-body">
-            <div className="categoria-item">
-                <button className="categoria-item-button">
+        <div className="item-side">
+            <div className="header-item-side">
+                <span className="span-header-side">
                     {data.name}
-                </button>
+                </span>
                 {data.children && (
                     <button
-                        className="categoria-item-moor"
+                        className="button-moor-header-side"
                         onClick={() => setState(!state)}
                     >
                         {
-                            state ? ("-") : ("+")
+                            state ? ("x") : ("+")
                         }
                     </button>
                 )}
             </div>
             {state && (
-                <div className="categoria-item-list">
+                <ul className="ul-item-side">
                     {
                         data.children?.map(item => (
-                            <span>{item.name}</span>
+                            <li className="li-item-side">{item.name}</li>
                         ))
                     }
-                </div>
+                </ul>
             )}
         </div>
     )

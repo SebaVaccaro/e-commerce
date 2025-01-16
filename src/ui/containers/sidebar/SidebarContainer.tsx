@@ -17,11 +17,11 @@ export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
             <div className="sidebar-container-body">
                 <div className="sidebar-container-body-header">
                     <MiCuenta/>
-                    <MiCarrito/>
-                    <MidFavoritos/>
                     <div className="close-button-container" onClick={changeState}>
                         <Close/>
                     </div>
+                    <MiCarrito/>
+                    <MidFavoritos/>
                 </div>
                 <div className="sidebar-container-body-category">
                     <CategoriaItemContainer data={MenuData}/>
