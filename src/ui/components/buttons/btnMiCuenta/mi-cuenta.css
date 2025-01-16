@@ -1,0 +1,25 @@
+.mi-cuenta-button{
+    background-color: #323d70;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 30px;
+}
+.mi-cuenta-icon{
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    color: #ffffff;
+}
+.mi-cuenta-button:hover{
+    background-color: #222a4d;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 30px;
+}

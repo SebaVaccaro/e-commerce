@@ -1,0 +1,27 @@
+.mid-favoritos-button{
+    background-color: #ffffff;
+    border: none;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #282d3b;
+    border-radius: 30px;
+}
+.mid-favoritos-icon{
+    color: #282d3b;
+    width: 20px;
+    margin-right: 5px;
+}
+.mid-favoritos-button:hover{
+    background-color: #222a4d;
+    color: #ffffff;
+    cursor: pointer;
+}
+.mid-favoritos-button:hover .mid-favoritos-icon{
+    color: #ffffff;
+}
