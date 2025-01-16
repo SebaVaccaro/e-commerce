@@ -1,16 +1,19 @@
-.cart-button{
+.min-carrito-button{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60px;
     height: 50px;
+    background-color: #323d70;
+    border: 0;
 }
-.cart-icon{
+.min-carrito-icon{
     width: 35px;
     height: 35px;
+    color: #ffffff;
 }
-.cart-info{
+.min-carrito-info{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,10 +23,11 @@
     right: 8%;
     top: 0;
     background-color: #6776bb;
+    color: #ffffff;
     border-radius: 10px;
 }
 
-.cart-button:hover{
+.min-carrito-button:hover{
     background-color: #222a4d;
     color: #ffffff;
     cursor: pointer;

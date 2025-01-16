@@ -1,4 +1,4 @@
-.login-button{
+.entrar-button{
     background-color: #ffffff;
     border: none;
     margin-left: 30px;
@@ -12,16 +12,16 @@
     color: #282d3b;
     border-radius: 30px;
 }
-.login-icon{
+.entrar-icon{
     color: #282d3b;
     width: 25px;
     margin-right: 5px;
 }
-.login-button:hover{
+.entrar-button:hover{
     background-color: #222a4d;
     color: #ffffff;
     cursor: pointer;
 }
-.login-button:hover .login-icon{
+.entrar-button:hover .entrar-icon{
     color: #ffffff;
 }

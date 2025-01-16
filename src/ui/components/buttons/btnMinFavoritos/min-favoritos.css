@@ -1,4 +1,4 @@
-.favorite-button{
+.min-favorite-button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,10 +9,10 @@
     border: 0;
     border-radius: 30px;
 }
-.favorite-icon{
+.min-favorite-icon{
     width: 25px;
     height: 25px;
 }
-.favorite-button:hover{
+.min-favorite-button:hover{
     background-color: #222a4d;
 }
