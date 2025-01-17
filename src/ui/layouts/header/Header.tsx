@@ -3,13 +3,17 @@ import { MinCarrito } from "../../components/buttons/btnMinCarrito/MinCarrito"
 import { MinFavoritos } from "../../components/buttons/btnMinFavoritos/MinFavoritos"
 import { Sidebar } from "../sidebar/Sidebar"
 import "./header.css"
-export const Header = () =>{
-    return(
+export const Header = () => {
+    return (
         <header className="header">
-            <Sidebar/>
-            <Entrar/>
-            <MinFavoritos/>
-            <MinCarrito/>
+            <div className="sidebar-container-header">
+                <Sidebar />
+            </div>
+            <div className="user-container-header">
+                <Entrar />
+                <MinFavoritos />
+                <MinCarrito />
+            </div>
         </header>
     )
 }

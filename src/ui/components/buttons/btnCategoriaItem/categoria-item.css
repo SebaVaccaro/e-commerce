@@ -48,6 +48,7 @@
     margin-bottom: 20px;
 }
 .li-item-side{
+    margin: 5px;
     list-style-type: none;
 }
 .li-item-side:hover{
