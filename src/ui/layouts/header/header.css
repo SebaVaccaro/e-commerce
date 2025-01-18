@@ -48,7 +48,7 @@
         justify-content: flex-end;
     }
 }
-@media (min-width: 350px) and (max-width: 519px){
+@media (min-width: 320px) and (max-width: 519px){
     .header{
         margin: 0;
         display: flex;
@@ -74,10 +74,11 @@
         display: none;
     }
 }
-@media(max-width: 299px){
+@media(max-width: 319px){
     .header{
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 100vw;
         height: 80px;
         background-color: #323d70;
@@ -86,6 +87,7 @@
         color: #ffffff;
     }
     .sidebar-container-header{
+        width: 50px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -94,5 +96,8 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+    }
+    .user-container-header .min-favorite-button, .entrar-button{
+        display: none;
     }
 }
