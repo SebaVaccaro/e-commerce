@@ -20,6 +20,8 @@ export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
                     <div className="close-button-container" onClick={changeState}>
                         <Close/>
                     </div>
+                </div>
+                <div className="sidebar-container-body-sub-header">
                     <MiCarrito/>
                     <MidFavoritos/>
                 </div>

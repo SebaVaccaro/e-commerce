@@ -30,8 +30,8 @@
 @media(max-width: 799px){
     .entrar-button{
         background-color: #ffffff;
+        margin: 6px;
         border: none;
-        margin-left: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
