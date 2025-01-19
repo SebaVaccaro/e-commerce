@@ -1,0 +1,9 @@
+.catalogo-text-label{
+    cursor:pointer;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+

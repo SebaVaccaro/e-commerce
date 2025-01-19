@@ -1,6 +1,6 @@
 .mi-carrito-button{
-    background-color: #ffffff;
-    border: none;
+    background-color: #323d70;
+    border: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,18 +8,20 @@
     height: 50px;
     font-weight: 700;
     font-size: 16px;
-    color: #282d3b;
+    color: #ffffff;
     border-radius: 30px;
 }
 .mi-carrito-icon{
-    color: #282d3b;
-    width: 25px;
     margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    color: #ffffff;
 }
 .mi-carrito-button:hover{
     background-color: #222a4d;
     color: #ffffff;
     cursor: pointer;
+    border-radius: 30px;
 }
 .mi-carrito-button:hover .mi-carrito-icon{
     color: #ffffff;
