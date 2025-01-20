@@ -1,0 +1,177 @@
+.login-container{
+    height: 100%;
+}
+@media(min-width:450px) {
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .username-login-container {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-span {
+        font-weight: bold;
+        font-size: 26px;
+        color: #222529;
+    }
+
+    .username-span {
+        color: #777777;
+    }
+
+    .username-input {
+        font-size: 18px;
+        width: 400px;
+        height: 50px;
+        border: 1px solid #ebebeb;
+        color: #777777;
+    }
+
+    .password-login-container {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .password-span {
+        color: #777777;
+    }
+
+    .password-input {
+        font-size: 18px;
+        width: 400px;
+        height: 50px;
+        border: 1px solid #ebebeb;
+        color: #777777;
+    }
+
+    .loggin-button {
+        cursor: pointer;
+        margin-top: 10px;
+        border: none;
+        color: #ffffff;
+        background-color: #323D70;
+        width: 406px;
+        height: 50px;
+    }
+
+    .loggin-button:hover {
+        background-color: #222a4d;
+    }
+    
+    .register-option-login-container{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+    }
+    .register-option-span2{
+        color:#0063d4;
+        margin-left: 5px;
+    }
+    .register-option-span2:hover{
+        text-decoration: underline;
+    }
+}
+
+@media(max-width: 449px) {
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .username-login-container {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-span {
+        font-weight: bold;
+        font-size: 26px;
+        color: #222529;
+    }
+
+    .username-span {
+        color: #777777;
+    }
+
+    .username-input {
+        font-size: 18px;
+        width: 100%;
+        height: 50px;
+        border: 1px solid #ebebeb;
+        color: #777777;
+    }
+
+    .password-login-container {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .password-span {
+        color: #777777;
+    }
+
+    .password-input {
+        font-size: 18px;
+        width: 100%;
+        height: 50px;
+        border: 1px solid #ebebeb;
+        color: #777777;
+    }
+
+    .loggin-button {
+        cursor: pointer;
+        margin-top: 10px;
+        border: none;
+        color: #ffffff;
+        background-color: #323D70;
+        width: 90%;
+        height: 50px;
+    }
+
+    .loggin-button:hover {
+        background-color: #222a4d;
+    }
+
+
+    .register-option-login-container{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+    }
+    .register-option-span2{
+        margin-left: 5px;
+        color:#0063d4
+    }
+    .register-option-span2:hover{
+        text-decoration: underline;
+    }
+}

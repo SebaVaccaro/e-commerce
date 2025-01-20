@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Entrar } from "../../components/buttons/btnEntrar/Entrar"
 import { LogoPagina } from "../../components/buttons/btnLogoPagina/LogoPagina"
 import { MinCarrito } from "../../components/buttons/btnMinCarrito/MinCarrito"
@@ -10,9 +11,13 @@ export const Header = () => {
             <div className="sidebar-container-header">
                 <Sidebar />
             </div>
-            <LogoPagina/>
+            <Link to='/'>
+                <LogoPagina/>
+            </Link>
             <div className="user-container-header">
-                <Entrar />
+                <Link to='/login' >
+                    <Entrar />
+                </Link>
                 <MinFavoritos />
                 <MinCarrito />
             </div>
