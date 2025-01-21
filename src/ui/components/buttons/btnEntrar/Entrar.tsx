@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom"
 import "./entrar.css"
 export const Entrar = () => {
     return (
+        <Link to='/login'>
         <button className="entrar-button">
             <svg className="entrar-icon" viewBox="0 0 8.4666669 8.4666669">
                 <g transform="translate(0,-288.53332)">
@@ -11,10 +13,11 @@ export const Entrar = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         transform="matrix(0.26458333,0,0,0.26458333,0,288.53332)"
-                    />
+                        />
                 </g>
             </svg>
             <span className="entrar-span">Entrar</span>
         </button>
+        </Link>
     )
 }

@@ -7,12 +7,15 @@ import { Close } from "../../components/buttons/btnClose/Close"
 import { CategoriaItemContainer } from "../categoriaItem/CategoriaItemContainer"
 import { MenuData } from "../../../data/menuData"
 import { CatalogoTextLabel } from "../../components/text-label/catalogo/Catalogo"
+import { Entrar } from "../../components/buttons/btnEntrar/Entrar"
+import { useUserStore } from "../../../state/user/useUserStore"
 
 interface sidebarContainer{
     changeState: ()=>void
 }
 
 export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
+    const {user} = useUserStore()
     return(
         <div className="sidebar-container">
             <div className="sidebar-container-body">
@@ -23,7 +26,13 @@ export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
                     </div>
                 </div>
                 <div className="sidebar-container-body-sub-header">
-                    <MiCuenta/>
+                    {
+                        user ? (
+                            <MiCuenta/>
+                        ):(
+                            <Entrar/>
+                        )
+                    }
                     <MiCarrito/>
                     <MidFavoritos/>
                 </div>

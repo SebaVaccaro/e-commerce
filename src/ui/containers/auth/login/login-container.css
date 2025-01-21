@@ -70,6 +70,11 @@
     .loggin-button:hover {
         background-color: #222a4d;
     }
+
+    .span-error-login-container{
+        color: #777777;
+        margin: 20px;
+    }
     
     .register-option-login-container{
         height: 50px;
@@ -159,6 +164,10 @@
         background-color: #222a4d;
     }
 
+    .span-error-login-container{
+        color: #777777;
+        margin: 20px;
+    }
 
     .register-option-login-container{
         height: 50px;

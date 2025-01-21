@@ -97,6 +97,11 @@
         background-color: #222a4d;
     }
 
+    .span-error-register-container{
+        color: #777777;
+        margin: 20px;
+    }
+
     .login-option-register-container{
         height: 50px;
         display: flex;
@@ -213,6 +218,10 @@
         background-color: #222a4d;
     }
 
+    .span-error-register-container{
+        color: #777777;
+        margin: 20px;
+    }
 
     .login-option-register-container{
         height: 50px;
