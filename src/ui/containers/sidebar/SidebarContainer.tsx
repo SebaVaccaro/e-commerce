@@ -26,6 +26,7 @@ export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
                     </div>
                 </div>
                 <div className="sidebar-container-body-sub-header">
+                    <div className="cuenta-container-body-sub-header">
                     {
                         user ? (
                             <MiCuenta/>
@@ -33,6 +34,7 @@ export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
                             <Entrar/>
                         )
                     }
+                    </div>
                     <MiCarrito/>
                     <MidFavoritos/>
                 </div>

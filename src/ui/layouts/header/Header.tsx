@@ -15,14 +15,18 @@ export const Header = () => {
             </div>
             <LogoPagina />
             <div className="user-container-header">
-                {
-                    user ? (
-                        <MiCuenta />
-                    ) : (
-                        <Entrar />
-                    )
-                }
-                <MinFavoritos />
+                <div className="cuenta-container-header">
+                    {
+                        user ? (
+                            <MiCuenta />
+                        ) : (
+                            <Entrar />
+                        )
+                    }
+                </div>
+                <div className="favorite-container-header">
+                    <MinFavoritos />
+                </div>
                 <MinCarrito />
             </div>
         </header>
