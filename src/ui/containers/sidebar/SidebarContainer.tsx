@@ -16,6 +16,7 @@ interface sidebarContainer{
 
 export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
     const {user} = useUserStore()
+      
     return(
         <div className="sidebar-container">
             <div className="sidebar-container-body">
