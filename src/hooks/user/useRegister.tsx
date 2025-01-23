@@ -10,6 +10,7 @@ type UserRegisterType = {
 export const useRegister = () => {
     const [dataRegister, setDataRegister] = useState<UserRegisterType | null>(null)
     const [error, setError] = useState<string | null>(null)
+    const [registerStatus , setRegisterStatus] = useState<boolean>(false)
     const userServices = new UserService()
 
     useEffect(() => {
@@ -19,16 +20,13 @@ export const useRegister = () => {
             password: string,
         })=> {
             const res = await userServices.register(data.username, data.password, data.email)
-            if (typeof res === "string") {
-                console.log(res)
-                setError(res)
-                return
-        }
-    console.log(res)
+            if(!res.success)setError(res.error)
+            console.log(res)
+            setRegisterStatus(res.success)
 }
 if (dataRegister) {
     registerFunction(dataRegister)
 }
     }, [dataRegister])
-return { setDataRegister, error}
+return { setDataRegister, error, registerStatus}
 }

@@ -6,6 +6,9 @@ type UserType = {
     id: string;
     password: string;
 };
+type Response =
+    | {success: true, message: string, data: UserType}
+    | {success: false, message: string, error: string};
 export class Register{
     private userRepository: UserRepository;
 
@@ -13,12 +16,16 @@ export class Register{
         this.userRepository = new UserRepository();
     }
 
-    async execute(username: string, password: string, email: string): Promise<UserType | string> {
+    async execute(username: string, password: string, email: string): Promise<Response> {
         
         const existingUser = await this.userRepository.getUserByUsername(username);
         
-        if (typeof existingUser !== "string") {
-            return "El email ya está registrado.";
+        if(existingUser) {
+            return{
+                success: false,
+                message: "register failed",
+                error: "Email en uso"
+            }
         }
         
         const id = Date.now().toString()
@@ -27,7 +34,11 @@ export class Register{
         
         const res = await this.userRepository.saveUser(newUser);
 
-        return res;
+        return{
+            success: true,
+            message: "register succesfull",
+            data: res
+        }
     }
 
 }

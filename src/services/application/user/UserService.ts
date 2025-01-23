@@ -6,6 +6,10 @@ type UserType = {
     id: string;
     password: string;
 };
+type Response = 
+    {success: true, message: string, data: UserType}
+    | {success: false, message: string, error: string};
+
 export class UserService{
     private registerUseCase: Register;
     private loginUseCase: Login;
@@ -14,11 +18,11 @@ export class UserService{
         this.registerUseCase = new Register()
     }
     
-    async register(username: string, password: string, email: string): Promise<UserType | string> {
+    async register(username: string, password: string, email: string): Promise<Response> {
         return await this.registerUseCase.execute(username, password, email);
     }
 
-    async login(username: string, password: string): Promise<UserType | string> {
+    async login(username: string, password: string): Promise<Response> {
         return await this.loginUseCase.execute(username, password)
     }
 

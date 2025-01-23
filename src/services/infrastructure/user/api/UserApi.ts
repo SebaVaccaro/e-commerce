@@ -3,48 +3,43 @@ import { useInMemoryStore } from "../../../../state/user/inMemoryStore";
 
 export class UserApi {
   private inMemoryStore = useInMemoryStore.getState();
-  async getUserById(id: string): Promise<UserInterface | string> {
-    const user = this.inMemoryStore.getUserById(id);
-    if (!user) return "No se encontró usuario";
-    return user;
+  
+  async getUserById(id: string): Promise<UserInterface | false> {
+    const res = this.inMemoryStore.getUserById(id);
+    if(!res)return false
+    return res
   }
 
-  async getUserByUsername(username: string): Promise<UserInterface | string> {
-    const user = this.inMemoryStore.getUserByUsername(username);
-    if (!user) return "No se encontró usuario";
-    return user;
+  async getUserByUsername(username: string): Promise<UserInterface | false> {
+    const res = this.inMemoryStore.getUserByUsername(username);
+    if(!res)return false
+    return res
   }
 
+  async getUserByEmail(email: string): Promise<UserInterface | false> {
+    const res = this.inMemoryStore.getUserByEmail(email);
+    if(!res)return false
+    return res
+  }
+  
   async saveUser(user: UserInterface): Promise<UserInterface> {
-    try {
-      this.inMemoryStore.addUser(user);
-      return user;
-    } catch (error: any) {
-      throw new Error(error.message || "Error al guardar el usuario");
-    }
+    this.inMemoryStore.addUser(user);
+    return user
   }
 
-  async getUserByEmail(email: string): Promise<UserInterface | string> {
-    const user = this.inMemoryStore.getUserByEmail(email);
-    if (!user) return "Usuario no registrado";
-    return user;
-  }
 
-  async updateUser(user: UserInterface): Promise<string> {
-    try {
+  async updateUser(user: UserInterface): Promise<UserInterface> {
       this.inMemoryStore.updateUser(user);
-      return "Usuario actualizado";
-    } catch (error: any) {
-      throw new Error(error.message || "Error al actualizar el usuario");
-    }
+      return user
   }
 
-  async deleteUser(id: string): Promise<string> {
+  async deleteUser(id: string): Promise<boolean> {
     try {
       this.inMemoryStore.deleteUser(id);
-      return "Usuario eliminado";
-    } catch (error: any) {
-      throw new Error(error.message || "Error al eliminar el usuario");
+      return true
+    }catch(err){
+      console.log(err)
+      return false
     }
   }
 }

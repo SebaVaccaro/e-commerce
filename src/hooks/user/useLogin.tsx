@@ -13,13 +13,8 @@ export const useLogin = () =>{
     useEffect(()=>{
         const loginFunction = async (username:string, password:string)=>{
             const res = await userServices.login(username, password)
-            if(typeof res === "string"){
-                console.log(res)
-                setError(res)
-                return
-            }
-            login(res)
-            return
+            if(!res.success)return setError(res.error);
+            return login(res.data)
         }
         if(dataLogin?.password && dataLogin.password){
             loginFunction(dataLogin.username, dataLogin.password)

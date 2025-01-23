@@ -3,8 +3,7 @@ import "./register-container.css"
 import { useState } from "react"
 import { useRegister } from "../../../../hooks/user/useRegister";
 export const RegisterContainer = () => {
-  const [registerSuccesfull, setRegisterSuccesfull] = useState(false)
-  const {setDataRegister, error} = useRegister()  
+  const {setDataRegister, error, registerStatus} = useRegister()  
   const [formData, setFormData] = useState({
       email: "",
       username: "",
@@ -21,12 +20,11 @@ export const RegisterContainer = () => {
       e.preventDefault();
       const {email, username, password} = formData
       setDataRegister({email, username, password})
-      setRegisterSuccesfull(true)
     };
   
     return (
       <>
-        {registerSuccesfull ? (
+        {registerStatus ? (
           <div className="register-success-container">
             <span className="register-success-message">
               ¡Registro exitoso! 

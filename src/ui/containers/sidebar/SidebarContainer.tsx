@@ -7,8 +7,8 @@ import { Close } from "../../components/buttons/btnClose/Close"
 import { CategoriaItemContainer } from "../categoriaItem/CategoriaItemContainer"
 import { MenuData } from "../../../data/menuData"
 import { CatalogoTextLabel } from "../../components/text-label/catalogo/Catalogo"
-import { Entrar } from "../../components/buttons/btnEntrar/Entrar"
 import { useUserStore } from "../../../state/user/useUserStore"
+import { EntrarSidebar } from "../../components/buttons/btnEntrarSidebar/EntrarSidebar"
 
 interface sidebarContainer{
     changeState: ()=>void
@@ -32,7 +32,7 @@ export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
                         user ? (
                             <MiCuenta/>
                         ):(
-                            <Entrar/>
+                            <EntrarSidebar/>
                         )
                     }
                     </div>

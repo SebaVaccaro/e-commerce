@@ -5,23 +5,39 @@ type UserType = {
     id: string;
     password: string;
   };
-export class Login {
+  type Response =
+  | {success: true, message: string, data: UserType}
+  | {success: false, message: string, error: string};
+
+  export class Login {
     private userRepository: UserRepository;
 
     constructor() {
         this.userRepository = new UserRepository();
     }
-    async execute(username: string, password: string): Promise<UserType | string> {
+    async execute(username: string, password: string): Promise<Response> {
         
         const user = await this.userRepository.getUserByUsername(username);
         
-        if (typeof user === "string") {
-            return user;
+        if (!user) {
+            return {
+                success: false,
+                message: "login filed",
+                error: "No se encontro usuario"
+            };
         }
         if (user.password !== password) {
-            return "invalid password";
+            return {
+                success: false,
+                message: "login filed",
+                error: "Contraseña incorrecta"
+            };
         }
 
-        return user;
+        return {
+            success: true,
+            message: "login succesfull",
+            data: user
+        };
     }
 }
