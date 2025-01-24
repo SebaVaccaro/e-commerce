@@ -1,24 +1,27 @@
 import "./min-cart.css"
 
 type Cart = {
-    nombre: string,
+    modelo: string,
     precio: number,
-    description: string,
+    marca: string,
     categoria: string,
-    subCategoria:string,
-    src: string[]
+    sub_categoria: string,
+    descripcion: string,
+    img: string[],
+    id: string
 }
-export const MinCarts = ({data}: {data:Cart})=>{
-    return(
+export const MinCarts = ({ data }: { data: Cart }) => {
+    return (
         <div className="min-carts">
+
             <div className="min-carts-img-container">
-                <img className="min-carts-img" src={data.src[0]}/>
+                <img className="min-carts-img" src={data.img[0]} />
             </div>
             <div className="min-carts-name">
-                <span>{data.nombre}</span>
+                <span>{data.modelo}</span>
             </div>
             <div className="min-carts-price">
-                <span>{data.precio}</span>
+                <span>US${data.precio}</span>
             </div>
         </div>
     )

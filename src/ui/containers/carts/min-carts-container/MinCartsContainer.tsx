@@ -3,12 +3,14 @@ import { torres } from "../../../../data/torres"
 import { MinCarts } from "../../../components/carts/min/Min-Carts"
 import { useState } from "react"
 type Cart = {
-    nombre: string,
+    modelo: string,
     precio: number,
-    description: string,
+    marca: string,
     categoria: string,
-    subCategoria:string,
-    src: string[]
+    sub_categoria: string,
+    descripcion: string,
+    img: string[],
+    id: string
 }
 export const MinCartsContainer = () =>{
     const [dataState, setDataState] = useState<Cart[]>(torres)
