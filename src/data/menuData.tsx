@@ -5,6 +5,10 @@ export type menuData = {
 }
 export const MenuData: menuData[] = [
     {
+        name: "Equipos",
+        src: "/componentes/equipos"
+    },
+    {
         name: "Procesadores",
         src: "/componentes/procesadores",
         children: [
@@ -43,7 +47,17 @@ export const MenuData: menuData[] = [
     },
     {
         name: "Placa Madre",
-        src: "/componentes/placa-madre"
+        src: "/componentes/placa-madre",
+        children: [
+            {
+                name: "AMD",
+                src: "/componentes/placa-madre/amd"
+            },
+            {
+                name: "Intel",
+                src: "/componentes/placa-madre/intel"
+            }
+        ]
     },
     {
         name: "Monitores",

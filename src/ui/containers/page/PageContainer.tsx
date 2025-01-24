@@ -1,7 +1,8 @@
-import "./product-page.css"
+import "./page-container.css"
+import { useState } from "react"
 import { MinCarts } from "../../components/carts/min/Min-Carts"
 
-type Product = {
+type Component = {
     modelo: string,
     precio: number,
     marca: string,
@@ -11,10 +12,12 @@ type Product = {
     img: string[],
     id: string
 }
-export const ProductPage = ({data}: {data: Product[]}) =>{
+
+export const PageContainer = ({data}: {data: Component[]}) =>{
+    const [componentsData, setComponentsData] = useState<Component[]>(data)
     return(
         <div className="product-page">
-            {data.map(item=> <MinCarts key={item.id} data={item} />)}
+            {componentsData.map(item => <MinCarts key={item.id} data={item} />)}
         </div>
     )
 }
