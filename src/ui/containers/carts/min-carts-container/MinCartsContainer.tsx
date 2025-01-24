@@ -1,7 +1,7 @@
 import "./min-carts-container.css"
-import { torres } from "../../../../data/torres"
 import { MinCarts } from "../../../components/carts/min/Min-Carts"
 import { useState } from "react"
+import { cpus } from "../../../../data/cpus"
 type Cart = {
     modelo: string,
     precio: number,
@@ -13,7 +13,7 @@ type Cart = {
     id: string
 }
 export const MinCartsContainer = () =>{
-    const [dataState, setDataState] = useState<Cart[]>(torres)
+    const [dataState, setDataState] = useState<Cart[]>(cpus)
     const handleButtonRigth = () =>{
         const list = [...dataState]
         const firstCart = list.shift()
