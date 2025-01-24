@@ -29,7 +29,7 @@ export const MenuData: menuData[] = [
         children: [
             {
                 name: "Nvidea",
-                src: "/componentes/tarjetas-graficas/nvidea"
+                src: "/componentes/tarjetas-graficas/nvidia"
             },
             {
                 name: "AMD",
