@@ -14,18 +14,15 @@ export const MaxCarts = ({ data }: { data: Cart }) => {
     return (
         <div className="max-cart">
             <img className="max-cart-img" src={data.img[0]} alt="imagen del producto" />
-            <div className="max-cart-data">
-                <div className="max-cart-data-header">
-                    <span className="max-cart-data-header-model">{data.modelo}</span>
-                    <span className="max-cart-data-header-sub-category">{data.sub_categoria}</span>
-                    <span className="max-cart-data-header-brand">{data.marca}</span>
-                    <span className="max-cart-data-header-price">US${data.precio}</span>
-                </div>
-                <form action="submit" className="max-cart-data-form">
-                    <input type="number" className="max-cart-data-form-input"/>
-                    <button className="max-cart-data-form-button">AGREGAR AL CARRITO</button>
-                </form>
-            </div>
+            <span className="max-cart-data-model">{data.modelo}</span>
+            <span className="max-cart-data-sub-category">{data.sub_categoria}</span>
+            <span className="max-cart-data-brand">{data.marca}</span>
+            <span className="max-cart-data-price">US${data.precio}</span>
+            <form action="submit" className="max-cart-data-form">
+                <input type="number" className="max-cart-data-form-input" />
+                <button className="max-cart-data-form-button">AGREGAR AL CARRITO</button>
+            </form>
+
             <div className="max-cart-description">
 
                 <ul>
