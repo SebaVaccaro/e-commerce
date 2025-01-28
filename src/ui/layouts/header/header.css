@@ -99,7 +99,7 @@ a{
         align-items: center;
         justify-content: flex-end;
     }
-    .user-container-header .min-favorite-button, .entrar-button{
+    .user-container-header, .min-favorite-button  .entrar-button{
         display: none;
     }
 }

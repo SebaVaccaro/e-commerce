@@ -1,6 +1,8 @@
 export interface UserInterface{
-    id: string;
     username: string;
-    password: string;
     email: string;
+    id: string;
+    password: string;
+    favorite: string[];
+    purchases: string[]
 }

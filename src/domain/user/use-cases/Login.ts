@@ -1,12 +1,8 @@
 import { UserRepository } from "../../../services/infrastructure/user/repository/UserRepository";
-type UserType = {
-    username: string;
-    email: string;
-    id: string;
-    password: string;
-  };
+import { UserInterface } from "../entity/UserInterface";
+
   type Response =
-  | {success: true, message: string, data: UserType}
+  | {success: true, message: string, data: UserInterface}
   | {success: false, message: string, error: string};
 
   export class Login {

@@ -1,13 +1,9 @@
+import { UserInterface } from "../../../domain/user/entity/UserInterface";
 import { Login } from "../../../domain/user/use-cases/Login";
 import { Register } from "../../../domain/user/use-cases/Register";
-type UserType = {
-    username: string;
-    email: string;
-    id: string;
-    password: string;
-};
+
 type Response = 
-    {success: true, message: string, data: UserType}
+    {success: true, message: string, data: UserInterface}
     | {success: false, message: string, error: string};
 
 export class UserService{

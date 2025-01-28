@@ -1,3 +1,4 @@
+import { Link, useLocation } from "react-router-dom"
 import "./min-cart.css"
 
 type Cart = {
@@ -10,8 +11,20 @@ type Cart = {
     img: string[],
     id: string
 }
+
+
 export const MinCarts = ({ data }: { data: Cart }) => {
+    
+    const srcFunction = () =>{
+        const {pathname}= useLocation()
+        const pathnameSplit = pathname.split("/").filter(item=> item)
+        return `/${pathnameSplit[0]}/${pathnameSplit[1]}/${data.id}`
+    }
+    
+    const src = srcFunction()
+    
     return (
+        <Link to={src}>
         <div className="min-carts">
 
             <div className="min-carts-img-container">
@@ -24,5 +37,6 @@ export const MinCarts = ({ data }: { data: Cart }) => {
                 <span>US${data.precio}</span>
             </div>
         </div>
+        </Link>
     )
 }

@@ -1,13 +1,9 @@
 import { create } from "zustand";
-type User = {
-    username: string,
-    email: string,
-    password: string,
-    id: string
-}
+import { UserInterface } from "../../domain/user/entity/UserInterface";
+
 interface UserStore{
-    user:User | null
-    login: (userData: User)=> void
+    user:UserInterface | null
+    login: (userData: UserInterface)=> void
     logOut: ()=> void
 }
 export const useUserStore = create<UserStore>((set)=>({

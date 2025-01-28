@@ -1,13 +1,9 @@
 import { UserRepository } from "../../../services/infrastructure/user/repository/UserRepository";
 import { UserEntity } from "../entity/UserEntity";
-type UserType = {
-    username: string;
-    email: string;
-    id: string;
-    password: string;
-};
+import { UserInterface } from "../entity/UserInterface";
+
 type Response =
-    | {success: true, message: string, data: UserType}
+    | {success: true, message: string, data: UserInterface}
     | {success: false, message: string, error: string};
 export class Register{
     private userRepository: UserRepository;
@@ -30,7 +26,7 @@ export class Register{
         
         const id = Date.now().toString()
         
-        const newUser = new UserEntity(username, password, email, id);
+        const newUser = new UserEntity(username, password, email, id, [], []);
         
         const res = await this.userRepository.saveUser(newUser);
 

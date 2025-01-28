@@ -42,10 +42,6 @@ export const MenuData: menuData[] = [
         ]
     },
     {
-        name: "Gabinetes",
-        src: "/componentes/gabinetes"
-    },
-    {
         name: "Placa Madre",
         src: "/componentes/placa-madre",
         children: [
@@ -59,8 +55,4 @@ export const MenuData: menuData[] = [
             }
         ]
     },
-    {
-        name: "Monitores",
-        src: "/componentes/monitores"
-    }
 ]

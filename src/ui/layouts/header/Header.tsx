@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { useUserStore } from "../../../state/user/useUserStore"
 import { Entrar } from "../../components/buttons/btnEntrar/Entrar"
 import { LogoPagina } from "../../components/buttons/btnLogoPagina/LogoPagina"
@@ -18,7 +19,9 @@ export const Header = () => {
                 <div className="cuenta-container-header">
                     {
                         user ? (
-                            <MiCuenta />
+                            <Link to="/user">
+                                <MiCuenta />
+                            </Link>
                         ) : (
                             <Entrar />
                         )

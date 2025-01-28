@@ -9,6 +9,7 @@ import { MenuData } from "../../../data/menuData"
 import { CatalogoTextLabel } from "../../components/text-label/catalogo/Catalogo"
 import { useUserStore } from "../../../state/user/useUserStore"
 import { EntrarSidebar } from "../../components/buttons/btnEntrarSidebar/EntrarSidebar"
+import { Link } from "react-router-dom"
 
 interface sidebarContainer{
     changeState: ()=>void
@@ -30,7 +31,9 @@ export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
                     <div className="cuenta-container-body-sub-header">
                     {
                         user ? (
-                            <MiCuenta/>
+                            <Link to="/user">
+                                <MiCuenta/>
+                            </Link>
                         ):(
                             <EntrarSidebar/>
                         )

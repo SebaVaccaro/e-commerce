@@ -1,20 +1,14 @@
 import { create } from "zustand";
-
-type UserType = {
-  id: string;
-  username: string;
-  email: string;
-  password: string;
-};
+import { UserInterface } from "../../domain/user/entity/UserInterface";
 
 
 interface InMemoryStoreState {
-  users: UserType[];
-  addUser: (user: UserType) => void;
-  getUserById: (id: string) => UserType | undefined;
-  getUserByEmail: (email: string) => UserType | undefined;
-  getUserByUsername: (username: string) => UserType | undefined;
-  updateUser: (updatedUser: UserType) => void;
+  users: UserInterface[];
+  addUser: (user: UserInterface) => void;
+  getUserById: (id: string) => UserInterface | undefined;
+  getUserByEmail: (email: string) => UserInterface | undefined;
+  getUserByUsername: (username: string) => UserInterface | undefined;
+  updateUser: (updatedUser: UserInterface) => void;
   deleteUser: (id: string) => void;
 }
 
@@ -22,7 +16,7 @@ export const useInMemoryStore = create<InMemoryStoreState>((set, get) => ({
   users: [],
 
 
-  addUser: (user: UserType) => {
+  addUser: (user: UserInterface) => {
     const existingUser = get().users.find((u) => u.id === user.id);
     if (existingUser) {
       throw new Error(`User with ID ${user.id} already exists.`);
@@ -44,7 +38,7 @@ export const useInMemoryStore = create<InMemoryStoreState>((set, get) => ({
   },
 
 
-  updateUser: (updatedUser: UserType) => {
+  updateUser: (updatedUser: UserInterface) => {
     const existingUser = get().users.find((u) => u.id === updatedUser.id);
     if (!existingUser) {
       throw new Error(`User with ID ${updatedUser.id} does not exist.`);

@@ -6,7 +6,7 @@ type Product = {
     sub_categoria: string,
     descripcion: string,
     img: string[],
-    id: string
+    id: string,
 }
 export const cpus: Product[]  = [
     {
