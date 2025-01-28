@@ -12,6 +12,7 @@
         margin-bottom: 5px;
     }
     .max-cart-img{
+        width: 500px;
         grid-area: 1/1/7/2;
     }
     .max-cart-data-sub-category{
@@ -70,6 +71,7 @@
         margin-bottom: 5px;
     }
     .max-cart-img{
+        width: 400px;
         grid-area: 1/1/7/2;
     }
     .max-cart-data-sub-category{
