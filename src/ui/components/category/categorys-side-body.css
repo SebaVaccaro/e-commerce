@@ -1,0 +1,8 @@
+.category-side-body{
+    width: 250px;
+    margin: 10px 20px 10px 20px;
+}
+.category-side-body-header{
+    display: flex;
+    justify-content: space-between;
+}

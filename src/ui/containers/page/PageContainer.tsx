@@ -1,6 +1,5 @@
 import "./page-container.css"
 import { MinCarts } from "../../components/carts/min/Min-Carts"
-import { useEffect, useState } from "react"
 
 type Component = {
     modelo: string,
@@ -14,13 +13,10 @@ type Component = {
 }
 
 export const PageContainer = ({data}: {data: Component[]}) =>{
-    const [localData, setLocalData] = useState<Component[] | null>([])
-    useEffect(()=>{
-        setLocalData(data)
-    },[data])
+   
     return(
-        <div className="product-page"> 
-            {localData? localData.map((item,index) => <MinCarts key={item.id + index} data={item} />): (
+        <div className="page-container"> 
+            {data? data.map((item,index) => <MinCarts key={item.id + index} data={item} />): (
                 <div>
                     <span>404</span>
                 </div>

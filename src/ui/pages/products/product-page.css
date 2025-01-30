@@ -1,0 +1,8 @@
+.product-page{
+    display: flex;
+}
+@media(max-width:900px){
+    .side-body{
+        display: none;
+    }
+}
