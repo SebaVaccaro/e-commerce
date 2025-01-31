@@ -50,16 +50,6 @@ export const mothers: Product[] = [
         "id": "AB12CD34E"
     },
     {
-        "modelo": "Mother Gigabyte A520M DS3H V2",
-        "precio": 90.00,
-        "marca": "Gigabyte",
-        "categoria": "Motherboards",
-        "sub_categoria": "Motherboards AMD",
-        "descripcion": "Supports AMD Ryzen™ 5000 Series/ 3rd Gen Ryzen™ and 3rd Gen Ryzen™ with Radeon™ Graphics Processors; Dual Channel ECC/ Non-ECC Unbuffered DDR4, 4 DIMMs; 5+3 Phases Pure Digital VRM Solution with Low RDS(on) MOSFETs; Ultra-Fast NVMe PCIe 3.0 x4 M.2 Connector; GIGABYTE Exclusive 8118 Gaming LAN with Bandwidth Management; HDMI, DVI-D, Display Ports for Multiple Display; RGB FUSION 2.0 Supports Addressable LED & RGB LED Strips; Smart Fan 5 Features Multiple Temperature Sensors, Hybrid Fan Headers with FAN STOP; Q-Flash Plus Update BIOS without Installing the CPU, Memory and Graphics Card",
-        "img": ["https://thotcomputacion.com.uy/wp-content/uploads/2024/03/3351_2_d2946c31ce1c49ee8379b7c438743f43.jpg"],
-        "id": "AB12CD34E"
-    },
-    {
         "modelo": "Mother Gigabyte H610M K DDR4",
         "precio": 92.00,
         "marca": "Gigabyte",

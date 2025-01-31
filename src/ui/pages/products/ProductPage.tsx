@@ -38,40 +38,16 @@ export const ProductPage = () => {
         setData(appData)
     }, [location])
 
-    const [arrays, setArrays] = useState<Component[][]>([])
-    useEffect(() => {
-        if (data) {
-            const newArrays: Component[][] = []
-            const lengthCpus = data.length
-            const cantidadDeArrays = Math.ceil(lengthCpus / 8)
-            for (let i = 0; i < cantidadDeArrays; i++) {
-                const newArray = data.slice(i * 8, (i + 1) * 8)
-                newArrays.push(newArray)
-            }
-            setArrays(newArrays)
-        }}, [data])
 
-
-    const [page, setPage] = useState<number>(0)
-    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setPage(Number(event.target.value))
-    }
-
-    
     return (
         <div className="product-page">
-            <SideBody />
+            <div className="product-page-nav">
+                <SideBody />
+            </div>
             {
-                !arrays.length ? (<span>No hay data</span>) : (
+                !data ? (<span>No hay data</span>) : (
                     <>
-                        <select onChange={handleChange} value={page}>
-                            {arrays.map((_, index) => (
-                                <option key={index} value={index}>
-                                    {index + 1}
-                                </option>
-                            ))}
-                        </select>
-                        <PageContainer data={arrays[page]} />
+                        <PageContainer data={data} />
                     </>
                 )
             }

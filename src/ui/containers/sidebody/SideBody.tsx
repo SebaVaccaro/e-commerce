@@ -7,8 +7,8 @@ export const SideBody = () => {
     return (
         <div className="side-body">
             {
-                MenuData.map(item => (
-                    <CategorysSideBody data={item} />
+                MenuData.map((item, index) => (
+                    <CategorysSideBody key={index} data={item} />
                 ))
             }
         </div>

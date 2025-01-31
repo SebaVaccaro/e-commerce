@@ -76,7 +76,7 @@ export const cpus: Product[]  = [
         "sub_categoria": "Procesadores AMD",
         "descripcion": "N.° de núcleos de CPU: 6; N.° de subprocesos: 12; Reloj base: 3.6GHz; Reloj de aumento máx.: Hasta 4.2GHz; Caché L2 total: 3MB; Caché L3 total: 16MB; Desbloqueados: Sí; CMOS: TSMC 7nm FinFET; Paquete: AM4; Versión de PCI Express: PCIe® 3.0; Solución térmica: Wraith Stealth; TDP/TDP predeterminado: 65W; Temp. máx.: 90°C; Velocidad máxima de memoria: Up to 3200MHz; Tipo de memoria: DDR4; Canales de memoria: 2",
         "img": ["https://thotcomputacion.com.uy/wp-content/uploads/2023/05/4690_1_65caf8024a0247e6ae27f846eedb8178.jpg"],
-        "id": "QW34PL67D"
+        "id": "quepijaesteelemento"
     },
     {
         "modelo": "CPU Intel Core i3 10100 3.60GHz 6MB LGA1200 10th Gen",
@@ -146,7 +146,7 @@ export const cpus: Product[]  = [
         "sub_categoria": "Procesadores Intel",
         "descripcion": "Cantidad de núcleos: 4; # of Performance-cores: 4; # of Efficient-cores: 0; Cantidad de subprocesos: 8; Frecuencia turbo máxima: 4.30 GHz; Performance-core Max Turbo Frequency: 4.30 GHz; Performance-core Base Frequency: 3.30 GHz; Gráficos del procesador: Gráficos UHD Intel® 730; Frecuencia de base de gráficos: 300 MHz; Frecuencia dinámica máxima de gráficos: 1.40 GHz; Caché: 12 MB Intel® Smart Cache; Total L2 Cache: 5 MB; Processor Base Power: 58 W; Maximum Turbo Power: 89 W",
         "img": ["https://thotcomputacion.com.uy/wp-content/uploads/2023/05/4865_1_908494ec9383402d9d487a59a94026c6.jpg"],
-        "id": "PL34XT89J"
+        "id": "PL34XT89J87asd"
     },
     {
         "modelo": "CPU Intel Core i3 14100f Raptor Lake 1700",
