@@ -1,3 +1,4 @@
+import { useShoppingCart } from "../../../../hooks/shoppingCart/useShoppingCart"
 import "./max-carts.css"
 type Cart = {
     modelo: string,
@@ -10,7 +11,15 @@ type Cart = {
     id: string
 }
 export const MaxCarts = ({ data }: { data: Cart }) => {
+    const { addToCart } = useShoppingCart()
+
     const desciptionList = data.descripcion.split(";").filter(item => item)
+    
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
+        e.preventDefault()
+        addToCart({product: data, quantity: 1})
+    }
+
     return (
         <div className="max-cart">
             <img className="max-cart-img" src={data.img[0]} alt="imagen del producto" />
@@ -18,7 +27,7 @@ export const MaxCarts = ({ data }: { data: Cart }) => {
             <span className="max-cart-data-sub-category">{data.sub_categoria}</span>
             <span className="max-cart-data-brand">{data.marca}</span>
             <span className="max-cart-data-price">US${data.precio}</span>
-            <form action="submit" className="max-cart-data-form">
+            <form onSubmit={(e)=>onSubmit(e)} action="submit" className="max-cart-data-form">
                 <input type="number" className="max-cart-data-form-input" />
                 <button className="max-cart-data-form-button">AGREGAR AL CARRITO</button>
             </form>
@@ -27,8 +36,8 @@ export const MaxCarts = ({ data }: { data: Cart }) => {
 
                 <ul>
                     {
-                        desciptionList.map(item => (
-                            <li>{item}</li>
+                        desciptionList.map((item,index) => (
+                            <li key={index}>{item}</li>
                         ))
                     }
                 </ul>

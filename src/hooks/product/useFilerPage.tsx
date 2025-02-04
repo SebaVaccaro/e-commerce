@@ -19,6 +19,8 @@ export const useFilterPage = ({ data }: { data: Component[] }) => {
     const [selectView, setSelectView] = useState<number>(12)
     const [selectPage, setSelectPages] = useState<number>(0)
 
+
+    
     const newData = () => {
         const arrayNum = Math.ceil(data.length / selectView)
         const newDataPage = Array.from({ length: arrayNum }, (_, index) => {

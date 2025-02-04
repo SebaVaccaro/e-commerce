@@ -15,21 +15,24 @@ type Component = {
 }
 
 export const PageContainer = ({ data }: { data: Component[] }) => {
-    const { dataPage, view, setSelectView, pages, setSelectPages } = useFilterPage({data})
-    
-    const changeViewe = (e: React.ChangeEvent<HTMLSelectElement>)=>{
+    const { dataPage, view, setSelectView, pages, setSelectPages } = useFilterPage({ data })
+
+    const changeViewe = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectView(Number(e.target.value))
     }
-    const changePage = (e: React.ChangeEvent<HTMLSelectElement>)=>{
+    const changePage = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectPages(Number(e.target.value))
     }
     return (
         <div className="page-container">
-            <select onChange={(e)=>changeViewe(e)}>
-                {view.map(item=>(
-                    <option key={item} value={item}>{item}</option>
-                ))}
-            </select>
+            <div>
+                <span>Mostra:</span>
+                <select onChange={(e) => changeViewe(e)}>
+                    {view.map(item => (
+                        <option key={item} value={item}>{item}</option>
+                    ))}
+                </select>
+            </div>
             <div className="page-container-body">
                 {dataPage ? dataPage.map((item) => <MinCarts key={item.id} data={item} />) : (
                     <div>
@@ -37,13 +40,16 @@ export const PageContainer = ({ data }: { data: Component[] }) => {
                     </div>
                 )}
             </div>
-            <select onChange={(e)=>changePage(e)}>
+            <div>
+            <span>Pagina:</span>
+            <select onChange={(e) => changePage(e)}>
                 {
-                    pages?.map(({value, key})=>(
+                    pages?.map(({ value, key }) => (
                         <option key={key} value={value}>{value + 1}</option>
                     ))
                 }
             </select>
+            </div>
         </div>
     )
 }
