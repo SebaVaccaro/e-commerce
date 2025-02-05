@@ -30,7 +30,9 @@ export const Header = () => {
                 <div className="favorite-container-header">
                     <MinFavoritos />
                 </div>
-                <MinCarrito />
+                <Link to='/shopping-cart'>
+                    <MinCarrito />
+                </Link>
             </div>
         </header>
     )

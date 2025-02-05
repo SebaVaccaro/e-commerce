@@ -7,6 +7,7 @@ import { RegisterPage } from './ui/pages/auth/register/RegisterPage'
 import { ProductPage } from './ui/pages/products/ProductPage'
 import { UserPage } from './ui/pages/user/UserPage'
 import { FullProductPage } from './ui/pages/products/FullProductPage'
+import { ShoppingCartPage } from './ui/pages/shoppingCart/ShoppingCartPage'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/user' element={<UserPage />} />
+        <Route path='/shopping-cart' element={<ShoppingCartPage/>}/>
         <Route path='/componentes/procesadores' element={<ProductPage />} />
         <Route path='/componentes/procesadores/:id' element={<FullProductPage />} />
         <Route path='/componentes/procesadores/intel' element={<ProductPage  />}/>

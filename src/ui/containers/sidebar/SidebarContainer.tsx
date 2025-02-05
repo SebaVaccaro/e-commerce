@@ -39,7 +39,9 @@ export const SidebarContiner:React.FC<sidebarContainer> = ({changeState}) =>{
                         )
                     }
                     </div>
-                    <MiCarrito/>
+                    <Link to="/shopping-cart">
+                        <MiCarrito/>
+                    </Link>
                     <MidFavoritos/>
                 </div>
                 <div className="sidebar-container-body-category">

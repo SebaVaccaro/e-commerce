@@ -1,4 +1,5 @@
-import { useShoppingCart } from "../../../../hooks/shoppingCart/useShoppingCart"
+import { useState } from "react"
+import { useShoppingCartStore } from "../../../../state/shoppingCart/useShoppingCartStore"
 import "./max-carts.css"
 type Cart = {
     modelo: string,
@@ -11,13 +12,19 @@ type Cart = {
     id: string
 }
 export const MaxCarts = ({ data }: { data: Cart }) => {
-    const { addToCart } = useShoppingCart()
+    const {addToCart} = useShoppingCartStore()
 
+    const [inputState, setInputState] = useState(1)
+    
     const desciptionList = data.descripcion.split(";").filter(item => item)
     
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault()
-        addToCart({product: data, quantity: 1})
+        if(inputState>0)addToCart({product: data, quantity: inputState})
+    }
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
+        const value = Number(e.target.value)
+        setInputState(value)
     }
 
     return (
@@ -28,7 +35,14 @@ export const MaxCarts = ({ data }: { data: Cart }) => {
             <span className="max-cart-data-brand">{data.marca}</span>
             <span className="max-cart-data-price">US${data.precio}</span>
             <form onSubmit={(e)=>onSubmit(e)} action="submit" className="max-cart-data-form">
-                <input type="number" className="max-cart-data-form-input" />
+                <input 
+                    className="max-cart-data-form-input"
+                    type="number"
+                    onChange={(e)=>onChange(e)}
+                    value={inputState}
+                    min={0}
+                    max={10}
+                />
                 <button className="max-cart-data-form-button">AGREGAR AL CARRITO</button>
             </form>
 

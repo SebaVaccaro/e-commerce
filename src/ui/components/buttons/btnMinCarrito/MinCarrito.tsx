@@ -1,8 +1,8 @@
 
-import { useShoppingCart } from "../../../../hooks/shoppingCart/useShoppingCart"
+import { useShoppingCartStore } from "../../../../state/shoppingCart/useShoppingCartStore"
 import "./min-carrito.css"
 export const MinCarrito = () => {
-    const {specsCartState} = useShoppingCart()
+    const {specsCartState} = useShoppingCartStore()
     return (
         <button className="min-carrito-button">
             <div className="min-carrito-container">
