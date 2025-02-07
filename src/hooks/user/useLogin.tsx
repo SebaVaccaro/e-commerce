@@ -3,22 +3,28 @@ import { UserService } from "../../services/application/user/UserService"
 import { useUserStore } from "../../state/user/useUserStore";
 
 
-export const useLogin = () =>{
+export const useLogin = () => {
     const userServices = new UserService()
-    const {login} = useUserStore()
-    
-    const [dataLogin, setDataLogin] = useState<{username:string, password:string} | null>(null)
+    const { login } = useUserStore()
+
+    const [dataLogin, setDataLogin] = useState<{ email: string, password: string } | null>(null)
     const [error, setError] = useState<string | null>(null)
-    
-    useEffect(()=>{
-        const loginFunction = async (username:string, password:string)=>{
-            const res = await userServices.login(username, password)
-            if(!res.success)return setError(res.error);
-            return login(res.data)
+
+    useEffect(() => {
+        const loginFunction = async () => {
+            if (dataLogin?.email && dataLogin.password) {
+                const res = await userServices.login(dataLogin?.email, dataLogin?.password)
+                console.log(res)
+                if (typeof res === "string") {
+                    setError(res)
+                } else {
+                    login(res)
+                }
+            }
         }
-        if(dataLogin?.password && dataLogin.password){
-            loginFunction(dataLogin.username, dataLogin.password)
+        if(dataLogin){
+            loginFunction()
         }
-    },[dataLogin])
-    return{setDataLogin, error}
+    }, [dataLogin])
+    return { setDataLogin, error }
 }

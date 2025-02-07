@@ -1,10 +1,7 @@
 import { UserRepository } from "../../../services/infrastructure/user/repository/UserRepository";
-import { UserEntity } from "../entity/UserEntity";
 import { UserInterface } from "../entity/UserInterface";
 
-type Response =
-    | {success: true, message: string, data: UserInterface}
-    | {success: false, message: string, error: string};
+
 export class Register{
     private userRepository: UserRepository;
 
@@ -12,29 +9,12 @@ export class Register{
         this.userRepository = new UserRepository();
     }
 
-    async execute(username: string, password: string, email: string): Promise<Response> {
+    async execute(username: string, password: string, email: string): Promise<UserInterface | string> {
         
-        const existingUser = await this.userRepository.getUserByUsername(username);
         
-        if(existingUser) {
-            return{
-                success: false,
-                message: "register failed",
-                error: "Email en uso"
-            }
-        }
         
-        const id = Date.now().toString()
-        
-        const newUser = new UserEntity(username, password, email, id, [], []);
-        
-        const res = await this.userRepository.saveUser(newUser);
-
-        return{
-            success: true,
-            message: "register succesfull",
-            data: res
-        }
+        const res = await this.userRepository.register(username, password, email)
+        return res
     }
 
 }

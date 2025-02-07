@@ -5,13 +5,13 @@ import { useLogin } from "../../../../hooks/user/useLogin";
 import { useUserStore } from "../../../../state/user/useUserStore";
 
 type State = {
-  username: string;
+  email: string;
   password: string;
 };
 
 export const LoginContainer = () => {
   const { setDataLogin, error } = useLogin();
-  const [state, setState] = useState<State>({ username: "", password: "" });
+  const [state, setState] = useState<State>({ email: "", password: "" });
   const { user } = useUserStore();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,8 +21,8 @@ export const LoginContainer = () => {
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (state.username && state.password) {
-      setDataLogin({ username: state.username, password: state.password });
+    if (state.email && state.password) {
+      setDataLogin({ email: state.email, password: state.password });
     }
   };
 
@@ -31,16 +31,16 @@ export const LoginContainer = () => {
   ) : (
     <form className="login-container" onSubmit={submit}>
       <span className="login-span">LOGIN</span>
-      <div className="username-login-container">
-        <span className="username-span">
+      <div className="email-login-container">
+        <span className="email-span">
           Dirección de correo electrónico<span>*</span>
         </span>
         <input
-          className="username-input"
+          className="email-input"
           type="text"
-          name="username"
+          name="email"
           placeholder="Ingresa tu E-mail"
-          value={state.username}
+          value={state.email}
           onChange={handleInputChange}
         />
       </div>

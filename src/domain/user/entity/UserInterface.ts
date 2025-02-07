@@ -3,6 +3,4 @@ export interface UserInterface{
     email: string;
     id: string;
     password: string;
-    favorite: string[];
-    purchases: string[]
 }

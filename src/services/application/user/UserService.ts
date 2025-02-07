@@ -2,9 +2,7 @@ import { UserInterface } from "../../../domain/user/entity/UserInterface";
 import { Login } from "../../../domain/user/use-cases/Login";
 import { Register } from "../../../domain/user/use-cases/Register";
 
-type Response = 
-    {success: true, message: string, data: UserInterface}
-    | {success: false, message: string, error: string};
+
 
 export class UserService{
     private registerUseCase: Register;
@@ -14,12 +12,13 @@ export class UserService{
         this.registerUseCase = new Register()
     }
     
-    async register(username: string, password: string, email: string): Promise<Response> {
+    async register(username: string, email: string, password: string): Promise<UserInterface | string> {
         return await this.registerUseCase.execute(username, password, email);
     }
 
-    async login(username: string, password: string): Promise<Response> {
-        return await this.loginUseCase.execute(username, password)
+    async login(email: string, password: string): Promise<UserInterface | string> {
+        const res = await this.loginUseCase.execute(email, password)
+        return res
     }
 
 }
