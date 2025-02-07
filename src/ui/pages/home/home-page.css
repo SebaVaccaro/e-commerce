@@ -1,5 +1,19 @@
 .home-page{
+    margin-top: 20px;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.home-page-image-body{
+    margin-top: 20px;
+    width: 600px;
+    height: 300px;
+}
+
+.home-page-img{
+    width: 100%;
+    height: 100%;
 }
