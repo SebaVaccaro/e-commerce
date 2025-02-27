@@ -1,6 +1,7 @@
 import "./user-page.css"
 import { useUserStore } from "../../../state/user/useUserStore"
 import { useState } from "react"
+import { useChangePassword } from "../../../hooks/user/useChangePassword"
 
 type FormState = {
     basicData: boolean,
@@ -12,21 +13,34 @@ type FormState = {
 export const UserPage = () => {
     const user = useUserStore()
     const userData = user.user
-
     const [formState, setFormState] = useState<FormState>({
         basicData: true,
         facturationData: false,
         addressData: false,
         accessData: false
     })
-
+    
     const funSetFormState = (name:
         "basicData" |
         "facturationData" |
         "addressData" |
         "accessData") => {
-        const newForm = { ...formState, [name]: !formState[name] }
-        setFormState(newForm)
+            const newForm = { ...formState, [name]: !formState[name] }
+            setFormState(newForm)
+        }
+        
+    
+    const {responsePassword, setData} = useChangePassword()
+    const [newPassword, setNewPassword] = useState<string | null>(null)
+
+    const handelChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+        setNewPassword(e.target.value)
+    }
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
+        e.preventDefault()
+        if(!user.user)return
+        if(!newPassword)return
+        setData({password: newPassword, _id: user.user._id})
     }
 
     return (
@@ -148,7 +162,7 @@ export const UserPage = () => {
                         </div>
                         <div className="user-page-form-body">
                             <span className="user-page-form-span">{"Nueva Contraseña (*)"}</span>
-                            <input className="user-page-form-input" type="text" />
+                            <input onChange={handelChange} className="user-page-form-input" type="text" />
                         </div>
                         <div className="user-page-form-body">
                             <span className="user-page-form-span">{"Repetir Nueva Contraseña (*)"}</span>
@@ -163,10 +177,13 @@ export const UserPage = () => {
                                 <span>- Modifica esta información únicamente si deseas cambiar tu Contraseña.</span>
                             </div>
                         </div>
-                        <div className="user-page-button">
+                        <form className="user-page-button" onSubmit={handleSubmit}>
                             <span>{"(*) campos requeridos"}</span>
                             <button>Modificar Contraseña</button>
-                        </div>
+                        </form>
+                        {
+                            responsePassword && (<span>{responsePassword}</span>)
+                        }
                     </>)}
                 </div>
             </div>

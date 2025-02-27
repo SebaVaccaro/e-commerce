@@ -1,16 +1,15 @@
 import { UserApi } from "../../../services/infrastructure/user/api/UserApi";
 import { UserInterface } from "../interface/UserInterface";
 
-
-  export class Login {
+export class DeleteAddress {
     private userApi: UserApi;
 
     constructor() {
         this.userApi = new UserApi();
     }
-    async execute(email: string, password: string): Promise<UserInterface | string> {
+    async execute(userId: string, addressId: string): Promise<UserInterface | string> {
         
-        const user = await this.userApi.login(email, password);
+        const user = await this.userApi.deleteAddress(userId, addressId)
         
         if (!user) {
             return user

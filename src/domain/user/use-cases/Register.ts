@@ -1,19 +1,19 @@
-import { UserRepository } from "../../../services/infrastructure/user/repository/UserRepository";
-import { UserInterface } from "../entity/UserInterface";
+import { UserApi } from "../../../services/infrastructure/user/api/UserApi";
+import { UserInterface } from "../interface/UserInterface";
 
 
 export class Register{
-    private userRepository: UserRepository;
+    private userApi: UserApi;
 
     constructor() {
-        this.userRepository = new UserRepository();
+        this.userApi = new UserApi();
     }
 
     async execute(username: string, password: string, email: string): Promise<UserInterface | string> {
         
         
         
-        const res = await this.userRepository.register(username, password, email)
+        const res = await this.userApi.register(username, password, email)
         return res
     }
 
