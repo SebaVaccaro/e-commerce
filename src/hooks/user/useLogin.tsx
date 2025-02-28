@@ -14,12 +14,8 @@ export const useLogin = () => {
         const loginFunction = async () => {
             if (dataLogin?.email && dataLogin.password) {
                 const res = await userServices.login(dataLogin?.email, dataLogin?.password)
-                console.log(res)
-                if (typeof res === "string") {
-                    setError(res)
-                } else {
-                    login(res)
-                }
+                if(!res.success)return setError(res.message)
+                if(res.data)login(res.data)
             }
         }
         if(dataLogin){

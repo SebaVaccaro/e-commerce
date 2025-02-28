@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { UserInterface } from "../../domain/user/interface/UserInterface";
+import { UserDto } from "../../domain/user/interface/dtos/UserDto";
 
 interface UserStore{
-    user:UserInterface | null
-    login: (userData: UserInterface)=> void
+    user:UserDto | null
+    login: (userData: UserDto)=> void
     logOut: ()=> void
 }
 export const useUserStore = create<UserStore>((set)=>({

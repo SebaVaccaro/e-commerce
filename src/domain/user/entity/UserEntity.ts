@@ -13,8 +13,4 @@ export class UserEntity{
     this.favorite = favorite
     this.purchases = purchases
     }
-
-    setPassword(newPassword: string){
-        this.password = newPassword
-    }
 }

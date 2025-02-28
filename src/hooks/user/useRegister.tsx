@@ -20,8 +20,8 @@ export const useRegister = () => {
             password: string,
         }) => {
             const res = await userServices.register(data.username, data.password, data.email)
-            if (typeof res === "string")return setError(res)
-            setRegisterStatus(true)
+            if (!res.success)return setError(res.message)
+            setRegisterStatus(res.success)
         }
         if (dataRegister) {
             registerFunction(dataRegister)

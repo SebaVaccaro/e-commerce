@@ -30,7 +30,7 @@ export const UserPage = () => {
         }
         
     
-    const {responsePassword, setData} = useChangePassword()
+    const {response, setData} = useChangePassword()
     const [newPassword, setNewPassword] = useState<string | null>(null)
 
     const handelChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
@@ -182,7 +182,7 @@ export const UserPage = () => {
                             <button>Modificar Contraseña</button>
                         </form>
                         {
-                            responsePassword && (<span>{responsePassword}</span>)
+                            response && (<span>{response}</span>)
                         }
                     </>)}
                 </div>

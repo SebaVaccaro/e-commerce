@@ -1,4 +1,4 @@
-import { UserInterface } from "../../../domain/user/interface/UserInterface";
+import { ResponseDto } from "../../../domain/user/interface/dtos/ResponseDto";
 import { AddAddress } from "../../../domain/user/use-cases/AddAddress";
 import { ChangePass } from "../../../domain/user/use-cases/ChangePass";
 import { DeleteAddress } from "../../../domain/user/use-cases/DeleteAddress";
@@ -22,24 +22,23 @@ export class UserService{
         this.deleteAddressUseCase = new DeleteAddress()
     }
     
-    async register(username: string, email: string, password: string): Promise<UserInterface | string> {
+    async register(username: string, email: string, password: string): Promise<ResponseDto> {
         return await this.registerUseCase.execute(username, password, email);
     }
 
-    async login(email: string, password: string): Promise<UserInterface | string> {
-        const res = await this.loginUseCase.execute(email, password)
-        return res
+    async login(email: string, password: string): Promise<ResponseDto> {
+        return await this.loginUseCase.execute(email, password)
     }
 
-    async changePassword(password: string, _id: string): Promise<string | null> {
+    async changePassword(password: string, _id: string): Promise<ResponseDto> {
         return await this.changePasswordUseCase.execute(password, _id)
     }
 
-    async addAddress(_id: string, street: string, city: string, state: string, country: string): Promise<UserInterface | string> {
+    async addAddress(_id: string, street: string, city: string, state: string, country: string): Promise<ResponseDto> {
         return await this.addAddressUseCase.execute(_id, street, city, state, country)
     }
 
-    async deleteAddress(userId: string, addressId: string): Promise<UserInterface | string> {
+    async deleteAddress(userId: string, addressId: string): Promise<ResponseDto> {
         return await this.deleteAddressUseCase.execute(userId, addressId)
     }
 }
